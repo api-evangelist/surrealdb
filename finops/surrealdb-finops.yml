@@ -1,0 +1,64 @@
+---
+specification: FinOps Framework
+specificationVersion: '1.0'
+schema: https://www.finops.org/framework/
+provider: SurrealDB
+providerId: surrealdb
+created: '2026-06-12'
+modified: '2026-06-12'
+reconciled: true
+tags:
+  - FinOps
+  - FOCUS
+  - Database
+  - Cloud
+description: >-
+  FOCUS-aligned FinOps for SurrealDB Cloud. SurrealDB uses a usage-based billing
+  model with hourly compute charges and storage metered by gigabytes. The primary
+  cost drivers are compute instance hours and storage consumed. Monthly invoicing
+  is based on actual resource usage, with commitment discounts available on
+  request for higher-volume workloads.
+sources:
+  - https://surrealdb.com/pricing
+alignedWith:
+  framework: FinOps Foundation Framework
+  frameworkUrl: https://www.finops.org/framework/
+  dataSpec: FOCUS
+  dataSpecVersion: '1.3'
+  dataSpecUrl: https://focus.finops.org/focus-specification/v1-3/
+publisherName: SurrealDB
+serviceCategory: Database
+billingModel:
+  pricingCategory: Usage-Based
+  billingFrequency: Monthly
+  billingCurrency: USD
+focusColumns:
+  ServiceName: SurrealDB Cloud
+  ServiceCategory: Database
+  ProviderName: SurrealDB
+  PublisherName: SurrealDB
+  BillingCurrency: USD
+meters:
+  - name: Compute Hours
+    unit: instance_hours
+    aggregation: sum
+  - name: Storage
+    unit: gigabytes
+    aggregation: max
+  - name: Backup Storage
+    unit: gigabytes
+    aggregation: max
+principles:
+  - name: Visibility
+    description: >-
+      Track SurrealDB Cloud consumption monthly by monitoring compute hours and
+      storage growth across all cloud instances.
+  - name: Optimization
+    description: >-
+      Right-size compute tier to match actual workload; pause or downscale
+      non-production instances during idle periods; watch for unused storage
+      and orphaned backups.
+  - name: Accountability
+    description: >-
+      Tag SurrealDB Cloud instances by team or project to allocate costs;
+      review monthly invoices against provisioned tiers and usage patterns.

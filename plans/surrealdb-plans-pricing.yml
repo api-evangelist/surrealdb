@@ -1,0 +1,131 @@
+---
+specification: API Commons Plans
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/Plans
+provider: SurrealDB
+providerId: surrealdb
+created: '2026-06-12'
+modified: '2026-06-12'
+reconciled: true
+tags:
+  - Database
+  - Multi-Model
+  - Cloud
+  - SurrealDB
+description: >-
+  SurrealDB Cloud offers usage-based pricing across Start, Scale, and Enterprise
+  tiers. The Start tier includes a free allowance with 1GB storage and hourly
+  billing thereafter. Scale adds high-availability and horizontal scaling for
+  production workloads. Enterprise provides single-tenant, private cloud, or
+  self-hosted deployment with SLA-backed uptime and advanced compliance features.
+  Support plans (Standard, Business Critical, Premium) are available as add-ons.
+sources:
+  - https://surrealdb.com/pricing
+plans:
+  - id: surrealdb-start
+    name: Start
+    type: freemium
+    description: >-
+      Entry-level cloud plan with a free allowance (1GB storage, shared compute)
+      and hourly billing at $0.021/hour after free tier. Includes daily automated
+      backups, Cloud RBAC/ABAC, multi-model queries, and burst scaling. Billed
+      monthly based on actual usage.
+    entries:
+      - label: Storage (free tier)
+        name: storage_free
+        type: quota
+        metric: gigabytes
+        limit: 1
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: '0.00'
+        userMultiplied: false
+      - label: Compute (hourly rate after free tier)
+        name: compute_hourly
+        type: metered
+        metric: instance_hours
+        limit: -1
+        timeFrame: usage
+        geo: global
+        unit: 1
+        price: '0.021'
+        userMultiplied: false
+      - label: Daily Automated Backups
+        name: daily_backups
+        type: boolean
+        metric: enabled
+        limit: 1
+        timeFrame: day
+        geo: global
+        unit: 1
+        price: '0.00'
+        userMultiplied: false
+  - id: surrealdb-scale
+    name: Scale
+    type: paid
+    description: >-
+      Production-grade plan with high-availability, fault-tolerant deployment
+      across multiple availability zones, horizontal scaling to petabytes, and
+      multi-region disaster recovery. Pricing is configuration-dependent; contact
+      sales for details. Launching soon.
+    entries:
+      - label: Horizontal Scaling
+        name: horizontal_scaling
+        type: boolean
+        metric: enabled
+        limit: 1
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: 'contact'
+        userMultiplied: false
+      - label: Multi-Region Disaster Recovery
+        name: multi_region_dr
+        type: boolean
+        metric: enabled
+        limit: 1
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: 'contact'
+        userMultiplied: false
+  - id: surrealdb-enterprise
+    name: Enterprise
+    type: enterprise
+    description: >-
+      Single-tenant infrastructure with self-hosted or private cloud deployment
+      options. Includes audit logging, SSO, advanced access controls, FIPS-compliant
+      cryptography, Gen-3 distributed storage engine, SLA-backed uptime guarantees,
+      and dedicated support resources. Custom pricing.
+    entries:
+      - label: Single-Tenant Infrastructure
+        name: single_tenant
+        type: boolean
+        metric: enabled
+        limit: 1
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: 'custom'
+        userMultiplied: false
+      - label: SSO and Advanced Access Controls
+        name: sso_access_controls
+        type: boolean
+        metric: enabled
+        limit: 1
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: 'custom'
+        userMultiplied: false
+      - label: SLA-Backed Uptime
+        name: sla_uptime
+        type: boolean
+        metric: enabled
+        limit: 1
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: 'custom'
+        userMultiplied: false

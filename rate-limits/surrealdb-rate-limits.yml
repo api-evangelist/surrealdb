@@ -1,0 +1,33 @@
+---
+specification: API Commons Rate Limits
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/RateLimits
+provider: SurrealDB
+providerId: surrealdb
+created: '2026-06-12'
+modified: '2026-06-12'
+reconciled: true
+tags:
+  - Rate Limiting
+  - SurrealDB
+description: >-
+  SurrealDB does not publish explicit rate limits for its HTTP REST API in its
+  public documentation as of June 2026. Native rate limiting is a tracked
+  feature request (GitHub issue #2016) rather than a shipped capability. For
+  SurrealDB Cloud, connection and query concurrency are governed by the compute
+  tier provisioned. Operators running self-hosted deployments are advised to
+  implement rate limiting at the reverse proxy layer. The standard HTTP 429
+  status code is returned by the infrastructure layer when limits are exceeded.
+sources:
+  - https://surrealdb.com/docs/surrealdb/integration/http
+  - https://github.com/surrealdb/surrealdb/issues/2016
+headers:
+  retryAfter: Retry-After
+responseCodes:
+  throttled: 429
+limits:
+  - name: SurrealDB Cloud HTTP API
+    scope: key
+    metric: requests_per_minute
+    limit: -1
+    timeFrame: minute
