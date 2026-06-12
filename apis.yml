@@ -66,6 +66,10 @@ apis:
       - type: Documentation
         url: https://surrealdb.com/mcp
 common:
+  - type: JSONLDContext
+    url: json-ld/surrealdb-context.jsonld
+  - type: BlogFeeds
+    url: blogs/blogs.json
   - type: Website
     url: https://surrealdb.com
   - type: Documentation

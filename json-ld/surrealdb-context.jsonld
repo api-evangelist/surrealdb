@@ -1,0 +1,178 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "surrealdb": "https://surrealdb.com/docs/surrealdb/integration/http#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+
+    "SurrealDBHTTPAPI": {
+      "@id": "surrealdb:HTTPApi",
+      "@type": "@id"
+    },
+
+    "namespace": {
+      "@id": "surrealdb:namespace",
+      "@type": "xsd:string"
+    },
+    "database": {
+      "@id": "surrealdb:database",
+      "@type": "xsd:string"
+    },
+    "table": {
+      "@id": "surrealdb:table",
+      "@type": "xsd:string"
+    },
+    "recordId": {
+      "@id": "surrealdb:recordId",
+      "@type": "xsd:string"
+    },
+    "token": {
+      "@id": "surrealdb:token",
+      "@type": "xsd:string"
+    },
+    "status": {
+      "@id": "surrealdb:status",
+      "@type": "xsd:string"
+    },
+    "result": {
+      "@id": "surrealdb:result"
+    },
+    "time": {
+      "@id": "surrealdb:time",
+      "@type": "xsd:string"
+    },
+    "code": {
+      "@id": "surrealdb:responseCode",
+      "@type": "xsd:integer"
+    },
+    "details": {
+      "@id": "surrealdb:details",
+      "@type": "xsd:string"
+    },
+
+    "SurrealQLQuery": {
+      "@id": "surrealdb:SurrealQLQuery",
+      "@type": "@id"
+    },
+    "GraphQLQuery": {
+      "@id": "surrealdb:GraphQLQuery",
+      "@type": "@id"
+    },
+    "MLModel": {
+      "@id": "surrealdb:MLModel",
+      "@type": "@id"
+    },
+    "modelName": {
+      "@id": "surrealdb:modelName",
+      "@type": "xsd:string"
+    },
+    "modelVersion": {
+      "@id": "surrealdb:modelVersion",
+      "@type": "xsd:string"
+    },
+
+    "SigninRequest": {
+      "@id": "surrealdb:SigninRequest",
+      "@type": "@id"
+    },
+    "SignupRequest": {
+      "@id": "surrealdb:SignupRequest",
+      "@type": "@id"
+    },
+    "ns": {
+      "@id": "surrealdb:namespace",
+      "@type": "xsd:string"
+    },
+    "db": {
+      "@id": "surrealdb:database",
+      "@type": "xsd:string"
+    },
+    "ac": {
+      "@id": "surrealdb:accessMethod",
+      "@type": "xsd:string"
+    },
+    "user": {
+      "@id": "surrealdb:username",
+      "@type": "xsd:string"
+    },
+    "pass": {
+      "@id": "surrealdb:password",
+      "@type": "xsd:string"
+    },
+
+    "ExportOptions": {
+      "@id": "surrealdb:ExportOptions",
+      "@type": "@id"
+    },
+    "users": {
+      "@id": "surrealdb:exportUsers",
+      "@type": "xsd:boolean"
+    },
+    "accesses": {
+      "@id": "surrealdb:exportAccesses",
+      "@type": "xsd:boolean"
+    },
+    "params": {
+      "@id": "surrealdb:exportParams",
+      "@type": "xsd:boolean"
+    },
+    "functions": {
+      "@id": "surrealdb:exportFunctions",
+      "@type": "xsd:boolean"
+    },
+    "analyzers": {
+      "@id": "surrealdb:exportAnalyzers",
+      "@type": "xsd:boolean"
+    },
+    "tables": {
+      "@id": "surrealdb:exportTables",
+      "@type": "xsd:string",
+      "@container": "@set"
+    },
+    "versions": {
+      "@id": "surrealdb:exportVersions",
+      "@type": "xsd:boolean"
+    },
+    "records": {
+      "@id": "surrealdb:exportRecords",
+      "@type": "xsd:boolean"
+    },
+
+    "SurrealDBVersion": {
+      "@id": "surrealdb:Version",
+      "@type": "@id"
+    },
+    "CustomEndpoint": {
+      "@id": "surrealdb:CustomEndpoint",
+      "@type": "@id"
+    }
+  },
+
+  "@graph": [
+    {
+      "@type": "WebAPI",
+      "@id": "https://surrealdb.com/docs/surrealdb/integration/http",
+      "name": "SurrealDB HTTP REST API",
+      "description": "The SurrealDB HTTP REST API provides stateless access to SurrealDB instances over standard HTTP, supporting CRUD, SurrealQL, GraphQL, authentication, import/export, and ML model management.",
+      "url": "https://surrealdb.com/docs/surrealdb/integration/http",
+      "provider": {
+        "@type": "Organization",
+        "name": "SurrealDB",
+        "url": "https://surrealdb.com"
+      },
+      "documentation": "https://surrealdb.com/docs/surrealdb/integration/http"
+    },
+    {
+      "@type": "WebAPI",
+      "@id": "https://surrealdb.com/mcp",
+      "name": "SurrealDB MCP Server",
+      "description": "SurrealMCP exposes SurrealDB database operations, agent memory, and cloud management as structured tool calls over the Model Context Protocol.",
+      "url": "https://surrealdb.com/mcp",
+      "provider": {
+        "@type": "Organization",
+        "name": "SurrealDB",
+        "url": "https://surrealdb.com"
+      },
+      "documentation": "https://surrealdb.com/mcp"
+    }
+  ]
+}
