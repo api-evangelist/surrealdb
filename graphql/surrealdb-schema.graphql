@@ -1,0 +1,224 @@
+# SurrealDB GraphQL Schema
+#
+# SurrealDB generates its GraphQL schema dynamically at runtime from the
+# namespace/database's table definitions, field types, custom functions, and
+# access definitions. This file documents the fixed, built-in types that are
+# always registered regardless of the user's schema, as confirmed by the
+# source at surrealdb/core/src/gql/schema.rs and surrealdb/core/src/gql/mutations.rs.
+#
+# Schema generation is controlled via:
+#   DEFINE CONFIG GRAPHQL TABLES AUTO FUNCTIONS AUTO;
+#
+# Tables and fields defined with DEFINE TABLE / DEFINE FIELD produce
+# corresponding Object types (output) and Input types (mutations) following
+# Apollo naming conventions (PascalCase types, camelCase fields/queries).
+
+# ---------------------------------------------------------------------------
+# Built-in custom scalars
+# ---------------------------------------------------------------------------
+
+"String-encoded UUID (RFC 4122)"
+scalar uuid
+
+"Arbitrary-precision decimal number"
+scalar decimal
+
+"Numeric value – integer or float"
+scalar number
+
+"ISO 8601 datetime string"
+scalar datetime
+
+"SurrealDB duration string (e.g. 1h30m)"
+scalar duration
+
+"Base64-encoded byte string"
+scalar bytes
+
+"Schemaless SurrealDB object"
+scalar object
+
+"Any SurrealDB value (fallback scalar)"
+scalar any
+
+"Null value marker"
+scalar null
+
+"Arbitrary JSON value (object, array, string, number, or boolean)"
+scalar JSON
+
+# ---------------------------------------------------------------------------
+# Built-in interfaces
+# ---------------------------------------------------------------------------
+
+"Every table record exposes an id field."
+interface record {
+  id: ID!
+}
+
+"Relation (edge) tables additionally expose in and out record references."
+interface relation implements record {
+  id: ID!
+  in: record!
+  out: record!
+}
+
+# ---------------------------------------------------------------------------
+# Geometry types (GeoJSON-compatible)
+# ---------------------------------------------------------------------------
+
+"GeoJSON geometry type discriminator"
+enum GeometryType {
+  Point
+  LineString
+  Polygon
+  MultiPoint
+  MultiLineString
+  MultiPolygon
+  GeometryCollection
+}
+
+"GeoJSON Point"
+type GeometryPoint {
+  type: GeometryType!
+  "Coordinates as JSON – [longitude, latitude]"
+  coordinates: JSON!
+}
+
+"GeoJSON LineString"
+type GeometryLineString {
+  type: GeometryType!
+  "Coordinates as JSON – array of [lng, lat] pairs"
+  coordinates: JSON!
+}
+
+"GeoJSON Polygon"
+type GeometryPolygon {
+  type: GeometryType!
+  "Coordinates as JSON – array of linear rings"
+  coordinates: JSON!
+}
+
+"GeoJSON MultiPoint"
+type GeometryMultiPoint {
+  type: GeometryType!
+  coordinates: JSON!
+}
+
+"GeoJSON MultiLineString"
+type GeometryMultiLineString {
+  type: GeometryType!
+  coordinates: JSON!
+}
+
+"GeoJSON MultiPolygon"
+type GeometryMultiPolygon {
+  type: GeometryType!
+  coordinates: JSON!
+}
+
+"GeoJSON GeometryCollection"
+type GeometryCollection {
+  type: GeometryType!
+  geometries: [Geometry!]!
+}
+
+"A GeoJSON geometry – one of Point, LineString, Polygon, MultiPoint, MultiLineString, MultiPolygon, or GeometryCollection"
+union Geometry =
+    GeometryPoint
+  | GeometryLineString
+  | GeometryPolygon
+  | GeometryMultiPoint
+  | GeometryMultiLineString
+  | GeometryMultiPolygon
+  | GeometryCollection
+
+# Geometry input types (coordinates are JSON! to stay within the 7-level
+# introspection ofType chain limit required by strict clients such as Postman)
+
+"GeoJSON Point input – coordinates is [lng, lat]"
+input GeometryPointInput {
+  coordinates: JSON!
+}
+
+"GeoJSON LineString input"
+input GeometryLineStringInput {
+  coordinates: JSON!
+}
+
+"GeoJSON Polygon input"
+input GeometryPolygonInput {
+  coordinates: JSON!
+}
+
+"GeoJSON MultiPoint input"
+input GeometryMultiPointInput {
+  coordinates: JSON!
+}
+
+"GeoJSON MultiLineString input"
+input GeometryMultiLineStringInput {
+  coordinates: JSON!
+}
+
+"GeoJSON MultiPolygon input"
+input GeometryMultiPolygonInput {
+  coordinates: JSON!
+}
+
+"Unified geometry input accepting any GeoJSON geometry variant"
+input GeometryInput {
+  coordinates: JSON
+  geometries: JSON
+}
+
+# ---------------------------------------------------------------------------
+# Authentication mutations (generated from DEFINE ACCESS ... TYPE RECORD)
+# ---------------------------------------------------------------------------
+# These fields are added to the Mutation root when at least one Record access
+# definition with a SIGNIN or SIGNUP clause exists in the database.
+
+# signIn(access: String!, variables: JSON!): String!
+# signUp(access: String!, variables: JSON!): String!
+
+# ---------------------------------------------------------------------------
+# Dynamic table query/mutation pattern (illustrative example)
+# ---------------------------------------------------------------------------
+# For a table defined as:
+#   DEFINE TABLE person SCHEMAFULL;
+#   DEFINE FIELD name ON person TYPE string;
+#   DEFINE FIELD age  ON person TYPE int;
+#
+# SurrealDB generates the following (names follow Apollo conventions):
+
+# type Person implements record {
+#   id: ID!
+#   name: String!
+#   age: Int!
+# }
+#
+# type Query {
+#   person(id: ID!): Person
+#   people(
+#     filter: PersonFilter
+#     order:  PersonOrder
+#     limit:  Int
+#     start:  Int
+#   ): [Person!]!
+# }
+#
+# type Mutation {
+#   createPerson(data: PersonCreateInput!): Person
+#   updatePerson(id: ID!, data: PersonUpdateInput!): Person
+#   upsertPerson(data: PersonUpsertInput!): Person
+#   deletePerson(id: ID!): Person
+#   createPeople(data: [PersonCreateInput!]!): [Person!]!
+#   updatePeople(filter: PersonFilter, data: PersonUpdateInput!): [Person!]!
+#   upsertPeople(data: [PersonUpsertInput!]!): [Person!]!
+#   deletePeople(filter: PersonFilter): [Person!]!
+# }
+#
+# type Subscription {
+#   person(id: ID!): Person
+#   people(filter: PersonFilter, order: PersonOrder, limit: Int, start: Int): [Person!]!
+# }

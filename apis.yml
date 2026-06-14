@@ -1,99 +1,96 @@
----
 aid: surrealdb
 name: SurrealDB
-description: >-
-  SurrealDB is a multi-model database that unifies documents, graphs, vectors,
-  time-series, full-text search, and relational data within a single ACID
-  transaction framework. It exposes a native HTTP REST API and supports SurrealQL,
-  a powerful query language designed for multi-model data access. The platform
-  includes built-in authentication with JWT tokens, row-level security, and live
-  query subscriptions for real-time applications. SurrealDB Cloud provides a
-  managed hosting option with usage-based pricing, while the open-source engine
-  can be self-hosted. The database also ships a Model Context Protocol (MCP)
-  server enabling AI agents and tools such as Claude, Cursor, and VS Code to
-  query and manage data directly.
+description: SurrealDB is a multi-model database that unifies documents, graphs, vectors,
+  time-series, full-text search, and relational data within a single ACID transaction
+  framework. It exposes a native HTTP REST API and supports SurrealQL, a powerful
+  query language designed for multi-model data access. The platform includes built-in
+  authentication with JWT tokens, row-level security, and live query subscriptions
+  for real-time applications. SurrealDB Cloud provides a managed hosting option with
+  usage-based pricing, while the open-source engine can be self-hosted. The database
+  also ships a Model Context Protocol (MCP) server enabling AI agents and tools such
+  as Claude, Cursor, and VS Code to query and manage data directly.
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
-  - Database
-  - Multi-Model
-  - Graph Database
-  - Document Database
-  - Vector Database
-  - Time-Series
-  - SurrealQL
-  - AI
-  - MCP
+- Database
+- Multi-Model
+- Graph Database
+- Document Database
+- Vector Database
+- Time-Series
+- SurrealQL
+- AI
+- MCP
 url: https://raw.githubusercontent.com/api-evangelist/surrealdb/refs/heads/main/apis.yml
 created: '2026-06-12'
 modified: '2026-06-12'
 specificationVersion: '0.19'
 apis:
-  - aid: surrealdb:http-api
-    name: SurrealDB HTTP REST API
-    description: >-
-      The SurrealDB HTTP REST API provides stateless access to SurrealDB instances
-      over standard HTTP. It supports CRUD operations on tables and records,
-      SurrealQL query execution via POST /sql, GraphQL queries, authentication
-      via JWT and basic auth, data import/export, health and version endpoints,
-      and user-defined custom API endpoints via DEFINE API statements.
-    humanURL: https://surrealdb.com/docs/surrealdb/integration/http
-    baseURL: https://cloud.surrealdb.com
-    tags:
-      - Database
-      - REST
-      - SurrealQL
-      - Multi-Model
-    properties:
-      - type: Documentation
-        url: https://surrealdb.com/docs/surrealdb/integration/http
-  - aid: surrealdb:mcp-server
-    name: SurrealDB MCP Server
-    description: >-
-      SurrealMCP exposes SurrealDB database operations, agent memory, and cloud
-      management as structured tool calls over the Model Context Protocol. It
-      enables MCP-compatible AI clients such as Claude, Cursor, and VS Code to
-      query documents, graphs, vectors, and relational data through a single
-      connection without custom integration code.
-    humanURL: https://surrealdb.com/mcp
-    baseURL: https://surrealdb.com/mcp
-    tags:
-      - MCP
-      - AI
-      - Agent
-      - Model Context Protocol
-    properties:
-      - type: Documentation
-        url: https://surrealdb.com/mcp
-common:
-  - type: JSONLDContext
-    url: json-ld/surrealdb-context.jsonld
-  - type: BlogFeeds
-    url: blogs/blogs.json
-  - type: Website
-    url: https://surrealdb.com
+- aid: surrealdb:http-api
+  name: SurrealDB HTTP REST API
+  description: The SurrealDB HTTP REST API provides stateless access to SurrealDB
+    instances over standard HTTP. It supports CRUD operations on tables and records,
+    SurrealQL query execution via POST /sql, GraphQL queries, authentication via JWT
+    and basic auth, data import/export, health and version endpoints, and user-defined
+    custom API endpoints via DEFINE API statements.
+  humanURL: https://surrealdb.com/docs/surrealdb/integration/http
+  baseURL: https://cloud.surrealdb.com
+  tags:
+  - Database
+  - REST
+  - SurrealQL
+  - Multi-Model
+  properties:
   - type: Documentation
-    url: https://surrealdb.com/docs
-  - type: GitHubOrganization
-    url: https://github.com/surrealdb
-  - type: LinkedIn
-    url: https://uk.linkedin.com/company/surrealdb
-  - type: Blog
-    url: https://surrealdb.com/blog
-  - type: Pricing
-    url: https://surrealdb.com/pricing
-  - type: StatusPage
-    url: https://status.surrealdb.com/
-  - type: Changelog
-    url: https://surrealdb.com/releases
-  - type: X
-    url: https://x.com/SurrealDB
-  - type: Plans
-    url: plans/surrealdb-plans-pricing.yml
-  - type: RateLimits
-    url: rate-limits/surrealdb-rate-limits.yml
-  - type: FinOps
-    url: finops/surrealdb-finops.yml
+    url: https://surrealdb.com/docs/surrealdb/integration/http
+  - url: graphql/surrealdb-graphql.md
+    type: GraphQL
+- aid: surrealdb:mcp-server
+  name: SurrealDB MCP Server
+  description: SurrealMCP exposes SurrealDB database operations, agent memory, and
+    cloud management as structured tool calls over the Model Context Protocol. It
+    enables MCP-compatible AI clients such as Claude, Cursor, and VS Code to query
+    documents, graphs, vectors, and relational data through a single connection without
+    custom integration code.
+  humanURL: https://surrealdb.com/mcp
+  baseURL: https://surrealdb.com/mcp
+  tags:
+  - MCP
+  - AI
+  - Agent
+  - Model Context Protocol
+  properties:
+  - type: Documentation
+    url: https://surrealdb.com/mcp
+common:
+- type: JSONLDContext
+  url: json-ld/surrealdb-context.jsonld
+- type: BlogFeeds
+  url: blogs/blogs.json
+- type: Website
+  url: https://surrealdb.com
+- type: Documentation
+  url: https://surrealdb.com/docs
+- type: GitHubOrganization
+  url: https://github.com/surrealdb
+- type: LinkedIn
+  url: https://uk.linkedin.com/company/surrealdb
+- type: Blog
+  url: https://surrealdb.com/blog
+- type: Pricing
+  url: https://surrealdb.com/pricing
+- type: StatusPage
+  url: https://status.surrealdb.com/
+- type: Changelog
+  url: https://surrealdb.com/releases
+- type: X
+  url: https://x.com/SurrealDB
+- type: Plans
+  url: plans/surrealdb-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/surrealdb-rate-limits.yml
+- type: FinOps
+  url: finops/surrealdb-finops.yml
 maintainers:
-  - FN: Kin Lane
-    email: kin@apievangelist.com
+- FN: Kin Lane
+  email: kin@apievangelist.com
