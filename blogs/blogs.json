@@ -2,13 +2,13 @@
   "repo": "surrealdb",
   "feeds": [
     {
-      "source": "https://surrealdb.com/blog",
-      "feed_url": "",
-      "title": "SurrealDB Blog",
+      "source": "https://uk.linkedin.com/company/surrealdb",
+      "feed_url": "https://uk.linkedin.com/company/surrealdb",
+      "title": "",
       "saved": 0,
       "method": "none"
     }
   ],
   "post_count": 0,
-  "fetched": "2026-06-12T00:00:00Z"
+  "fetched": "2026-06-14T20:42:17Z"
 }
