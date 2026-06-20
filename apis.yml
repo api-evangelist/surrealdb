@@ -10,7 +10,7 @@ description: SurrealDB is a multi-model database that unifies documents, graphs,
   also ships a Model Context Protocol (MCP) server enabling AI agents and tools such
   as Claude, Cursor, and VS Code to query and manage data directly.
 type: Index
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
 - Database
 - Multi-Model
