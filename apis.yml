@@ -65,7 +65,7 @@ apis:
 common:
 - type: JSONLDContext
   url: json-ld/surrealdb-context.jsonld
-- type: BlogFeeds
+- type: BlogFeed
   url: blogs/blogs.json
 - type: Website
   url: https://surrealdb.com
@@ -81,7 +81,7 @@ common:
   url: https://surrealdb.com/pricing
 - type: StatusPage
   url: https://status.surrealdb.com/
-- type: Changelog
+- type: ChangeLog
   url: https://surrealdb.com/releases
 - type: X
   url: https://x.com/SurrealDB
