@@ -1,0 +1,23 @@
+generated: '2026-07-11'
+method: probed
+source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
+hosts:
+- host: surrealdb.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Aug 21 20:41:54 2026 GMT
+  hsts: null
+- host: cloud.surrealdb.com
+  https: false
+domains:
+- domain: surrealdb.com
+  dnssec: false
+  caa:
+  - 0 issue "pki.goog"
+  - 0 issue "amazon.com"
+  - 0 issue "cloudflare.org"
+  - 0 issue "letsencrypt.org"
+  - 0 issue "letsencrypt.org;accounturi=https://acme-v02.api.letsencrypt.org/acme/acct/54403714"
+  spf: true
+  dmarc: true
+  dmarc_policy: reject

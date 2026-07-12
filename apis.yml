@@ -63,6 +63,12 @@ apis:
   - type: Documentation
     url: https://surrealdb.com/mcp
 common:
+- type: TrustCenter
+  url: security/surrealdb-trust-center.yml
+- type: VulnerabilityDisclosure
+  url: security/surrealdb-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/surrealdb-domain-security.yml
 - type: JSONLDContext
   url: json-ld/surrealdb-context.jsonld
 - type: BlogFeed
