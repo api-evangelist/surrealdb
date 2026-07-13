@@ -2,18 +2,14 @@
   "repo": "surrealdb",
   "feeds": [
     {
-      "source": "https://surrealdb.com/blog",
-      "feed_url": "",
-      "saved": 4,
-      "method": "agent-scrape"
-    },
-    {
       "source": "https://uk.linkedin.com/company/surrealdb",
+      "feed_url": "https://uk.linkedin.com/company/surrealdb",
+      "title": "",
       "saved": 0,
-      "error": "linkedin not scrapable"
+      "method": "none"
     }
   ],
-  "post_count": 7,
-  "fetched": "2026-06-27T13:15:11Z",
-  "agent_pulled": "2026-06-27"
+  "post_count": 9,
+  "fetched": "2026-07-11T11:50:51Z",
+  "agent_pulled": "2026-07-04"
 }
