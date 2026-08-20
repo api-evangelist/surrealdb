@@ -29,6 +29,16 @@ tags:
 - Graph Database
 - Document Database
 - Vector Database
+- Time Series
+- SurrealQL
+- Artificial Intelligence
+- MCP
+tags_raw:
+- Database
+- Multi-Model
+- Graph Database
+- Document Database
+- Vector Database
 - Time-Series
 - SurrealQL
 - AI
@@ -67,6 +77,10 @@ apis:
   humanURL: https://surrealdb.com/mcp
   baseURL: https://surrealdb.com/mcp
   tags:
+  - MCP
+  - Artificial Intelligence
+  - Agents
+  tags_raw:
   - MCP
   - AI
   - Agent
