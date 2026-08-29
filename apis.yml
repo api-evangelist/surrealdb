@@ -10,6 +10,17 @@ description: SurrealDB is a multi-model database that unifies documents, graphs,
   also ships a Model Context Protocol (MCP) server enabling AI agents and tools such
   as Claude, Cursor, and VS Code to query and manage data directly.
 type: Index
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: paid
   onboarding: unknown
