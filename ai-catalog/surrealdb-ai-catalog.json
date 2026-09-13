@@ -1,0 +1,185 @@
+{
+  "specVersion": "1.0",
+  "host": {
+    "displayName": "SurrealDB",
+    "identifier": "did:web:surrealdb.com",
+    "documentationUrl": "https://surrealdb.com/docs",
+    "logoUrl": "https://surrealdb.com/static/logo/dark.svg"
+  },
+  "entries": [
+    {
+      "identifier": "urn:air:surrealdb.com:mcp:cloud",
+      "displayName": "SurrealDB MCP Server",
+      "type": "application/mcp-server-card+json",
+      "url": "https://surrealdb.com/.well-known/mcp/server-card.json",
+      "description": "Managed Model Context Protocol server for SurrealDB Cloud. Deploy and manage instances and contexts, run SurrealQL against cloud instances, manage organisation access and billing, and connect agent memory - from any MCP-compatible client.",
+      "tags": [
+        "database",
+        "mcp",
+        "surrealql",
+        "cloud",
+        "devops"
+      ],
+      "updatedAt": "2026-08-19T00:00:00Z",
+      "representativeQueries": [
+        "deploy a new SurrealDB Cloud instance",
+        "run a SurrealQL query against my cloud database",
+        "list my SurrealDB Cloud organisations and instances",
+        "check the status, metrics, and logs of my SurrealDB instance"
+      ]
+    },
+    {
+      "identifier": "urn:air:surrealdb.com:mcp:agent-card",
+      "displayName": "SurrealDB A2A Agent Card",
+      "type": "application/json",
+      "url": "https://surrealdb.com/.well-known/agent-card.json",
+      "description": "A2A Agent Card for the SurrealDB Cloud MCP server: the skills it offers, the interface it is reachable on, and both authentication paths - Surreal ID OAuth and a personal access token. The service speaks MCP rather than an A2A transport binding, so a client finding no supported binding should connect over MCP.",
+      "tags": [
+        "a2a",
+        "agent",
+        "mcp",
+        "cloud"
+      ],
+      "updatedAt": "2026-08-20T00:00:00Z",
+      "representativeQueries": [
+        "what can the SurrealDB agent do",
+        "how do I authenticate an agent with SurrealDB"
+      ]
+    },
+    {
+      "identifier": "urn:air:surrealdb.com:docs:llms-txt",
+      "displayName": "SurrealDB llms.txt",
+      "type": "text/markdown",
+      "url": "https://surrealdb.com/llms.txt",
+      "description": "Curated llms.txt overview of the SurrealDB platform - the multi-model database engine, agent memory layer, distributed storage, SurrealDB Cloud, and SurrealDB Studio - with links to canonical pages. Every page on the site also supports markdown content negotiation via 'Accept: text/markdown' or a '.md' path suffix.",
+      "tags": [
+        "llms-txt",
+        "documentation",
+        "overview"
+      ],
+      "representativeQueries": [
+        "what is SurrealDB and what can it do",
+        "give me an overview of the SurrealDB platform and its products",
+        "how does SurrealDB support AI agents, vector search, and graph queries"
+      ]
+    },
+    {
+      "identifier": "urn:air:surrealdb.com:docs:llms-full-txt",
+      "displayName": "SurrealDB llms-full.txt",
+      "type": "text/markdown",
+      "url": "https://surrealdb.com/llms-full.txt",
+      "description": "Expanded llms.txt corpus with the full text of the SurrealDB website for deep context loading.",
+      "tags": [
+        "llms-txt",
+        "documentation",
+        "full-text"
+      ],
+      "representativeQueries": [
+        "load the full SurrealDB website content as context",
+        "explain SurrealQL and SurrealDB features in depth",
+        "detailed reference on SurrealDB products, features, and use cases"
+      ]
+    },
+    {
+      "identifier": "urn:air:surrealdb.com:skills:index",
+      "displayName": "SurrealDB Agent Skills index",
+      "type": "application/json",
+      "url": "https://surrealdb.com/.well-known/agent-skills/index.json",
+      "description": "Agent Skills discovery index for SurrealDB, listing every published SKILL.md with a sha256 digest over the bytes served alongside it. Covers the CLI, the JavaScript and Python SDKs, SurrealKit, SurrealQL with its functions and query performance, and vector search.",
+      "tags": [
+        "skills",
+        "agent-skills",
+        "surrealql",
+        "sdk"
+      ],
+      "updatedAt": "2026-08-20T00:00:00Z",
+      "representativeQueries": [
+        "how do I write SurrealQL",
+        "how do I connect to SurrealDB from Python"
+      ]
+    },
+    {
+      "identifier": "urn:air:surrealdb.com:api:openapi",
+      "displayName": "SurrealDB API Server OpenAPI description",
+      "type": "application/openapi+yaml",
+      "url": "https://api.surrealdb.com/openapi/public.yaml",
+      "description": "OpenAPI 3.0 description of the SurrealDB API Server at api.surrealdb.com, covering the public platform endpoints for SurrealDB Cloud.",
+      "tags": [
+        "openapi",
+        "api",
+        "cloud"
+      ],
+      "representativeQueries": [
+        "what REST endpoints does the SurrealDB platform API expose",
+        "manage SurrealDB Cloud resources over HTTP",
+        "get the OpenAPI schema for api.surrealdb.com"
+      ]
+    },
+    {
+      "identifier": "urn:air:surrealdb.com:api:catalog",
+      "displayName": "SurrealDB API catalog (RFC 9727)",
+      "type": "application/linkset+json",
+      "url": "https://surrealdb.com/.well-known/api-catalog",
+      "description": "RFC 9727 api-catalog linkset enumerating SurrealDB API surfaces, their documentation, OpenAPI descriptions, and status pages.",
+      "tags": [
+        "api-catalog",
+        "linkset",
+        "discovery"
+      ],
+      "representativeQueries": [
+        "what APIs does SurrealDB offer",
+        "find documentation and status pages for SurrealDB services"
+      ]
+    },
+    {
+      "identifier": "urn:air:surrealdb.com:agent:auth",
+      "displayName": "SurrealDB agent authentication guide",
+      "type": "text/markdown",
+      "url": "https://surrealdb.com/auth.md",
+      "description": "How an agent obtains and uses a credential for SurrealDB: Surreal ID OAuth with dynamic client registration for interactive clients, and personal access tokens for unattended ones, with the scopes each surface needs.",
+      "tags": [
+        "auth",
+        "oauth",
+        "agent",
+        "credentials"
+      ],
+      "updatedAt": "2026-08-20T00:00:00Z",
+      "representativeQueries": [
+        "how does an agent sign in to SurrealDB",
+        "how do I create a SurrealDB personal access token"
+      ]
+    },
+    {
+      "identifier": "urn:air:surrealdb.com:api:cloud-pricing",
+      "displayName": "SurrealDB Cloud pricing API",
+      "type": "application/json",
+      "url": "https://surrealdb.com/api/cloud/pricing.json",
+      "description": "Machine-readable pricing for SurrealDB Cloud instance types and configurations.",
+      "tags": [
+        "pricing",
+        "cloud",
+        "api"
+      ],
+      "representativeQueries": [
+        "how much does SurrealDB Cloud cost",
+        "compare SurrealDB Cloud instance sizes and prices",
+        "what is the hourly price of a SurrealDB Cloud cluster"
+      ]
+    },
+    {
+      "identifier": "urn:air:surrealdb.com:site:sitemap",
+      "displayName": "surrealdb.com sitemap",
+      "type": "application/xml",
+      "url": "https://surrealdb.com/sitemap.xml",
+      "description": "XML sitemap of every page on www.surrealdb.com, including blog posts, events, features, and product pages.",
+      "tags": [
+        "sitemap",
+        "crawling"
+      ],
+      "representativeQueries": [
+        "list all pages on surrealdb.com",
+        "find the URL of a SurrealDB blog post or product page"
+      ]
+    }
+  ]
+}
