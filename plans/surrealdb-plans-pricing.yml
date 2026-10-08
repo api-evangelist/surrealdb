@@ -42,3 +42,37 @@ plans:
   price_text: Custom
   period: none
   unit: deployment
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models:
+  - hybrid
+  - metered
+  units:
+  - compute
+  - object
+  plans:
+  - name: Cloud Start
+    access: other
+    model: metered
+    model_how: derived
+    units:
+    - compute
+    periods:
+    - other
+  - name: Cloud Scale
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - compute
+    periods:
+    - other
+  - name: Self-hosted Enterprise
+    access: other
+    model: metered
+    model_how: derived
+    units:
+    - object
+    periods:
+    - none
