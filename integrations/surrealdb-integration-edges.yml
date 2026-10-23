@@ -16,6 +16,8 @@ checked:
 - eclipse/integrations/eclipse-integration-edges.yml
 - jetbrains/integrations/jetbrains-integration-edges.yml
 - vs-code-marketplace/integrations/vs-code-marketplace-integration-edges.yml
+- https://jsr.io/api/packages
+- https://jsr.io/api/scopes
 marketplace_apps: []
 edges:
 - partner_name: Microsoft Azure Marketplace
@@ -217,6 +219,37 @@ edges:
   badges:
   - Verified publisher
   - Verified domain
+- partner_name: JSR
+  partner: null
+  partner_match: null
+  type: register
+  direction: provider-built
+  category: official SDK (JavaScript/TypeScript, JSR)
+  evidence: https://jsr.io/@surrealdb/surrealdb
+  channel: package-registry
+  relationship: distribution-channel
+  contract_reference:
+    register: JSR (jsr.io public API JSON)
+    spec_file: null
+    language: JavaScript/TypeScript
+    packages:
+    - name: '@surrealdb/surrealdb'
+      version: 2.1.1
+      released: '2026-10-10'
+      released_field: versions.createdAt
+      lapsed: false
+      page: https://jsr.io/@surrealdb/surrealdb
+      github_repository: https://github.com/surrealdb/surrealdb.js
+      repo_leg: github-org:surrealdb
+      publisher_leg: org:surrealdb
+      matched_by: github-org
+    current: true
+    signal_note: 'an official package on the registry: distribution, not an integration; lapsed = no release in
+      24 months or archived'
+    detected_by: sweep-jsr-javascript-registry.py
+    detected: '2026-10-23'
+  detected_by: sweep-jsr-javascript-registry.py
+  first_seen: '2026-10-23'
 source:
 - https://github.com/cncf/landscape
 - https://github.com/cncf/k8s-conformance
