@@ -5,8 +5,15 @@
       "source": "https://surrealdb.com/blog",
       "feed_url": "https://surrealdb.com/feed/blog.rss",
       "title": "",
-      "saved": 1,
+      "saved": 0,
       "method": "discovered"
+    },
+    {
+      "source": "https://surrealdb.com/feed/blog.rss",
+      "feed_url": "https://surrealdb.com/feed/blog.rss",
+      "title": "",
+      "saved": 0,
+      "method": "feed"
     },
     {
       "source": "https://uk.linkedin.com/company/surrealdb",
@@ -16,8 +23,8 @@
       "method": "none"
     }
   ],
-  "post_count": 10,
-  "fetched": "2026-10-10T13:15:00Z",
+  "post_count": 55,
+  "fetched": "2026-10-17T14:53:57Z",
   "agent_pulled": "2026-07-04",
   "feed_nature": "vendor-blog",
   "feed_nature_basis": "path_blog",
